@@ -1,0 +1,39 @@
+<h1 *ngIf="day=='today'">Hi</h1>
+<ng-template #elseBlock>
+  <h1>Hi</h1>
+</ng-template>
+<h4 *ngFor="let name of names">
+  {{name}}
+</h4>
+<h4 *ngFor="let number of numbers">
+  {{number.height}}
+  {{number.age}}
+</h4>
+<ul [ngSwitch]="Fruits">
+  <li *ngSwitchCase="'1'">Apple</li>
+  <li *ngSwitchCase="'2'">Mango</li>
+  <li *ngSwitchCase="'3'">Orange</li>
+  <li *ngSwitchCase="'4'">Watermelon</li>
+  <li *ngSwitchCase="'5'">Pineapple</li>
+  <li *ngSwitchDefault>Strawberry</li>
+</ul>
+<h3 [ngClass]=" 'ChangeColor' ">Hi</h3>
+<h3 [ngClass]=" 'ChangeColor bgColor' ">Hi</h3>
+<h3 [ngClass]="styleColor">Hello</h3>
+<h3 [ngClass]="styleColor==='font'?'bgColor':'ChangeColor'">Hello</h3>
+
+<h2 style="color:blue">a</h2>
+<h2 [ngStyle]="{'color':'purple'}">b</h2>
+<h2 [ngStyle]="{'color':textcolor}">Hi</h2>
+<h2 [ngStyle]="{'background-color':bgColor==='black'?'black':'green'}">Hi</h2>
+<h5 appHighlight>Example for Custom directive</h5>
+
+<p>{{'pipes' | uppercase}}</p>
+<p>{{'0.75' | percent}}</p>
+<h2>{{'100' | currency}}</h2>
+<h2>{{'456' | currency:'INR'}}</h2>
+<h5>{{dateExample | date:'long'}}</h5>
+<h5>{{'897' | currency:'INR'|lowercase}}</h5>
+
+<app-nav-bar></app-nav-bar>
+
